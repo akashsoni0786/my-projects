@@ -29,7 +29,6 @@ export class App extends Component {
       var wt = parseFloat(this.state.weight);
       var ht = parseFloat(this.state.height) / 100;
       var res = wt / Math.pow(ht, 2).toFixed(1);
-      console.log(res);
       if (res < 18.5) {
         this.setState({
           result: "Yor are Underweight",
@@ -50,11 +49,8 @@ export class App extends Component {
     }
   };
   reset = () => {
-    this.setState({
-      weight: "",
-      height: "",
-      result: "",
-    });
+    window.location.reload();
+    
   };
   render() {
     return (
