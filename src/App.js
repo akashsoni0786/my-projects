@@ -49,7 +49,13 @@ export class App extends Component {
       }
     }
   };
-
+  reset = () => {
+    this.setState({
+      weight: "",
+      height: "",
+      result: "",
+    });
+  };
   render() {
     return (
       <div className="App">
@@ -73,9 +79,11 @@ export class App extends Component {
             <button onClick={this.calculate} className="inputfields">
               Calculate
             </button>
-            <button className="inputfields">Reset</button>
+            <button className="inputfields" onClick={this.reset}>
+              Reset
+            </button>
           </div>
-          <Result results={this.state.result}/>
+          <Result results={this.state.result} />
         </header>
       </div>
     );
